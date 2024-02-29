@@ -1,7 +1,55 @@
+// TextEditor.js
 import React from 'react';
-import { CKEditor } from '@ckeditor/ckeditor5-react';
-import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
-import Button from '@mui/material/Button';
+import { Editor, EditorTools } from '@progress/kendo-react-editor';
+import Button from '@mui/material/Button'; // Import Material-UI Button component
+  import Content from './Content';
+
+const {
+  Bold,
+  Italic,
+  Underline,
+  Strikethrough,
+  Subscript,
+  Superscript,
+  ForeColor,
+  BackColor,
+  CleanFormatting,
+  AlignLeft,
+  AlignCenter,
+  AlignRight,
+  AlignJustify,
+  Indent,
+  Outdent,
+  OrderedList,
+  UnorderedList,
+  NumberedList,
+  BulletedList,
+  Undo,
+  Redo,
+  FontSize,
+  FontName,
+  FormatBlock,
+  Link,
+  Unlink,
+  InsertImage,
+  ViewHtml,
+  InsertTable,
+  InsertFile,
+  SelectAll,
+  Print,
+  Pdf,
+  TableProperties,
+  TableCellProperties,
+  AddRowBefore,
+  AddRowAfter,
+  AddColumnBefore,
+  AddColumnAfter,
+  DeleteRow,
+  DeleteColumn,
+  DeleteTable,
+  MergeCells,
+  SplitCell
+} = EditorTools;
 
 const TextEditor = ({ onEditorClose }) => {
   const handleEditorChange = (event, editor) => {
@@ -21,51 +69,39 @@ const TextEditor = ({ onEditorClose }) => {
   };
 
   return (
-    <div className="mx-auto p-4 bg-gray-100 rounded-lg shadow-lg" style={{ width: '1000px' }}>
-        <CKEditor
-          editor={ClassicEditor}
-          config={{
-            width: '100%',
-            toolbar: {
-              items: [
-                'heading', '|',
-                'fontFamily', '|',
-                'fontSize', '|',
-                'fontColor', '|',
-                'bold', 'italic', 'underline', 'strikethrough', '|',
-                'alignment', '|',
-                'indent', 'outdent', '|',
-                'bulletedList', 'numberedList', '|',
-                'link', '|',
-                'imageUpload', '|',
-                'undo', 'redo'
-              ]
-            },
-            fontFamily: {
-              options: [
-                'default',
-                'Arial,Helvetica,sans-serif',
-                'Georgia,serif',
-                'Times New Roman,serif',
-                'Verdana,sans-serif'
-              ]
-            },
-            fontSize: {
-              options: [
-                'default',
-                '8pt', '9pt', '10pt', '11pt', '12pt', '14pt', '18pt', '24pt', '36pt'
-              ]
-            },
-            alignment: {
-              options: ['default', 'left', 'center', 'right']
-            },
-            link: {
-              addTargetToExternalLinks: true
-            }
-          }}
-          onChange={handleEditorChange}
-        />
-      <div className="flex justify-end mt-4">
+    //<div style={{height: '300px', width: '1000px',margin:'auto'}}>
+    <div className="mx-auto p-1 bg-gray-100 rounded-lg shadow-lg" style={{ width: '1000px'}}>
+    <Editor
+        tools={[
+          [Bold, Italic, Underline, Strikethrough],
+          [Subscript, Superscript],
+          ForeColor,
+          BackColor,
+          [CleanFormatting],
+          [AlignLeft, AlignCenter, AlignRight, AlignJustify],
+          [Indent, Outdent],
+          [OrderedList, UnorderedList],
+          [NumberedList, BulletedList],
+          FontSize,
+          FontName,
+          FormatBlock,
+          [SelectAll],
+          [Undo, Redo],
+          [Link, Unlink, InsertImage, ViewHtml],
+          [InsertTable, InsertFile],
+          [Pdf, Print],
+          [TableProperties, TableCellProperties],
+          [AddRowBefore, AddRowAfter, AddColumnBefore, AddColumnAfter],
+          [DeleteRow, DeleteColumn, DeleteTable],
+          [MergeCells, SplitCell]
+        ]}
+        contentStyle={{
+          
+        }}
+        //onChange={handleEditorChange}
+       defaultContent={Content}
+      />
+      <div className='flex justify-end m-3'> 
         <Button variant="contained" onClick={saveContent} style={{ marginRight: '8px', backgroundColor: '#3f51b5', color: 'white' }}>
           Save
         </Button>

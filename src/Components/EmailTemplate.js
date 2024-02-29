@@ -1,3 +1,4 @@
+// EmailTemplate.js
 import React, { useState } from 'react';
 import TextEditor from './TextEditor';
 import { Button, MenuItem, Select } from '@mui/material';
