@@ -51,11 +51,11 @@ const {
   SplitCell
 } = EditorTools;
 
-const TextEditor = ({ onEditorClose }) => {
-  const handleEditorChange = (event, editor) => {
-    const data = editor.getData();
-    console.log(data);
-  };
+  const TextEditor = ({ onEditorClose }) => {
+    const handleEditorChange = (event, editor) => {
+      const data = editor.getData();
+      console.log(data);
+    };
 
   const saveContent = () => {
     // Implement your save logic here

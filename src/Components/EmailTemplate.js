@@ -1,6 +1,7 @@
 // EmailTemplate.js
 import React, { useState } from 'react';
-import TextEditor from './TextEditor';
+//import TextEditor from './TextEditor';
+import TinyMce from './TinyMce'
 import { Button, MenuItem, Select } from '@mui/material';
 
 const SectionButtons = ({ sections, selectedSection, setSelectedSection, handleEdit }) => (
@@ -96,7 +97,7 @@ const EmailTemplate = () => {
       </div>
 
       {editorVisible && (
-        <TextEditor onEditorClose={() => setEditorVisible(false)} editingSection={editingSection} />
+        <TinyMce onEditorClose={() => setEditorVisible(false)} editingSection={editingSection} />
       )}
     </div>
   );
