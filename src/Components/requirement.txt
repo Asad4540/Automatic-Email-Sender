@@ -1,7 +1,22 @@
-1.There should be three options on top A.East B.West C.internal Stakeholders
-2.Add "clients options to A & B and Add only add email option to internal stakeholders
-3.A client list should show up after selecting any of the option "A & B"
+write a code in react 
+
+1.There should be three options on top A.East B.West C.internal Stakeholders with radio buttons
+2.A client list should show up after selecting any of the option "A & B"
+3.Add "clients" & "email" options to A & B and Add only add "email" option to internal stakeholders
 4.after selecting a client if multiple emails are to be added then it should be sperated with semicolon(;)
  and a search field is to be added
 4.Email id would be fetched from database and can be added or deleted from front end
 5.There should be only "to" to A&b and "To and CC" in Internal Stakeholders
+
+EmailTemplate
+│
+├── SectionButtons
+│   ├── Radio Button (Internal Stakeholders)
+│   └── Radio Button (East & West)
+│
+├── SectionContent
+│   ├── Select (Template Status)
+│   ├── Edit Button
+│   └── View Button
+│
+└── TinyMce (Text Editor)

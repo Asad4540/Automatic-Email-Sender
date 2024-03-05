@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const Cancellation = () => {
   return (
-    <div>Cancellation</div>
+    <h1>Cancellation</h1>
   )
 }
 
