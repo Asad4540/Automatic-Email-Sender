@@ -1,0 +1,8 @@
+Require Updates 
+
+1.Refresh Timestamp 
+2.Decrease the cell space
+3.Navbar color solving
+4.Should reset at the start of every month
+5.A report should be recorded of all the actions taken by all the users 
+6.
