@@ -362,7 +362,7 @@ function TableComponent() {
                 else if (row.type === 'Read Only') readOnlyCounter = 1;
                 return (
                   <TableRow key={`special-${row.type}-${rowIndex}`} className={classes.specialRow}>
-                    <TableCell colSpan={tableHeadings.length + 1} className={classes.specialRowLabel} style={{backgroundColor: '#5356FF',padding:"0",color:""}}>
+                    <TableCell colSpan={tableHeadings.length + 1} className={classes.specialRowLabel} style={{backgroundColor: '#707CF1',padding:"0",color:"#ffffff"}}>
                       {row.label} 
                     </TableCell>
                   </TableRow>
