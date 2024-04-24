@@ -5,6 +5,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import moment from 'moment-timezone';
 import CreateUser from './CreateUser';
 
+
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [loginDialogOpen, setLoginDialogOpen] = useState(false);
@@ -45,7 +46,7 @@ const Navbar = () => {
 
   return (
     <div>
-      <AppBar position="fixed" sx={{ bgcolor: '#2F2257', color: '#fff' }}>
+      <AppBar position="fixed" sx={{ bgcolor: '#151744', color: '#fff' }}>
       <Toolbar>
           <Typography sx={{ flexGrow: 1, textAlign: 'left' }}>
             Date and Time (EST): {currentEstDateTime}
@@ -61,6 +62,7 @@ const Navbar = () => {
               >
                 <MenuIcon />
               </IconButton>
+              <img src="/Altera.svg" alt="Altera Logo" style={{ marginRight: '10px' }} />
               <Typography variant="h4" noWrap component="div" sx={{ flexGrow: 1, textAlign: 'center', color: 'white' }}>
                 Automated Email Sender 
               </Typography>
@@ -69,6 +71,7 @@ const Navbar = () => {
           ) : (
             <>
               <div style={{ display: 'flex', flexGrow: 8, justifyContent: 'center', alignItems: 'center' }}>
+              <img src="/Altera.svg" alt="Altera Logo" style={{ marginRight: '10px',width:100,padding:'5px' }} />
                 <Typography variant="h4" noWrap component="div" sx={{ textAlign: 'center', color: 'white' }}>
                   Automated Email Sender
                 </Typography>
