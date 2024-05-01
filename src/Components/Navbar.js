@@ -151,7 +151,7 @@ const Navbar = () => {
               >
                 <MenuIcon />
               </IconButton>
-              <img src="/Altera.svg" alt="Altera Logo" style={{ marginRight: '10px' }} />
+              <img src="/AWhite.png" alt="Altera Logo" style={{ marginRight: '10px',width:100 }} />
               <Typography variant="h4" noWrap component="div" sx={{ flexGrow: 1, textAlign: 'center', color: '' }}>
                 Automated Email Sender </Typography>
                 {isLoggedIn && (
@@ -166,7 +166,7 @@ const Navbar = () => {
           ) : (
             <>
               <div style={{ display: 'flex', flexGrow: 8, justifyContent: 'center', alignItems: 'center' }}>
-              <img src="/Altera.svg" alt="Altera Logo" style={{ marginRight: '10px',width:100,padding:'5px' }} />
+              <img src="/AWhite.png" alt="Altera Logo" style={{marginRight: '10px',width:100 }} />
                 <Typography variant="h4" noWrap component="div" sx={{ textAlign: 'center', color: 'white' }}>
                   Automated Email Sender
                 </Typography>
