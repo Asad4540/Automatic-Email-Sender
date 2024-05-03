@@ -3,24 +3,25 @@ import axios from 'axios';
 import moment from 'moment-timezone';
 import { Radio, RadioGroup, FormControlLabel, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Checkbox, Button, TextField, withStyles, makeStyles  } from '@material-ui/core';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme=> ({
   emailAdminColumn: {
     width: '33%', // Adjust the width as per your desired size
   },
-});
+}));
 
 const StyledTableCell = withStyles((theme) => ({
   head: {
-    backgroundColor: theme.palette.common.white,
-    color: theme.palette.common.black,
-    border: '1px solid #ddd',
-    //textAlign: 'center'
+    backgroundColor: "#151744",
+    color: '#fff',
+    border: '1px solid black',
+    textAlign: 'center'
   },
   body: {
     fontSize: 14,
-    border: '1px solid #ddd',
+    border: '1px solid black',
     padding: '8px', // Adjust padding
-    //textAlign: 'center',
+    textAlign: 'center',
+    
   },
 }))(TableCell);
 
@@ -199,13 +200,12 @@ const Home = () => {
         <FormControlLabel value="west" control={<Radio />} label="West zone client" />
       </RadioGroup>
       <TextField
-
         label="Search Clients"
         variant="outlined"
         value={searchTerm}
         onChange={handleSearchChange}
         placeholder="Search multiple clients with semicolon (;) delimiter"
-        style={{ marginTop:"15px",marginBottom:"15px",marginLeft:"13px",marginRight:"10px" ,width:"98%"}}
+        style={{ marginTop:"45px",marginBottom:"15px",marginLeft:"13px",marginRight:"10px" ,width:"98%"}}
       />
       <TableContainer component={Paper} style={{marginLeft:'13px' ,width:'98%'}}>
         <Table>

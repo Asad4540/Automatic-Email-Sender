@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { AppBar, Toolbar, Typography, IconButton, Drawer, List, ListItem, ListItemText, Button, useTheme, useMediaQuery,Dialog, DialogTitle, DialogContent, DialogActions, TextField, MenuItem, Select } from '@mui/material';
+import { AppBar, Toolbar, Typography, IconButton, Drawer, List, ListItem, ListItemText, Button, useTheme, useMediaQuery, Dialog, DialogTitle, DialogContent, DialogActions, TextField, MenuItem, Select } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import moment from 'moment-timezone';
 import axios from 'axios';
@@ -16,8 +16,8 @@ const Navbar = () => {
     email: '',
     password: '',
     team: '',
-    role:'user',
-    status:'pending',
+    role: 'user',
+    status: 'pending',
   });
   const [loginFormData, setLoginFormData] = useState({
     email: '',
@@ -126,7 +126,12 @@ const Navbar = () => {
       <List>
         {pages.map((text) => (
           <ListItem button component={Link} to={`/${text.replace(/\s+/g, '').toLowerCase()}`} key={text} onClick={handleDrawerToggle}>
-            <ListItemText primary={text} />
+            <ListItemText primary={text}
+            sx={{
+              '&:hover': {
+                color: '#f56e7b' // Change text color to pink on hover
+              }
+            }} />
           </ListItem>
         ))}
       </List>
@@ -135,11 +140,19 @@ const Navbar = () => {
 
   return (
     <div>
-      <AppBar position="fixed" sx={{ bgcolor: '#151744', color: 'white' }}>
-      <Toolbar>
-          <Typography sx={{ flexGrow: 1, textAlign: 'left' }}>
-            Date and Time (EST): {currentEstDateTime}
-          </Typography>
+      <AppBar position="fixed" sx={{ bgcolor: '#393392', color: 'white' }}>
+        <Toolbar className=''>
+          <div>
+            <Typography sx={{
+              flexGrow: 1, textAlign: 'left',
+              '&:hover': {
+                color: '#f56e7b', // Change color to pink on hover
+                transition: 'color 0.3s ease', // Adding transition effect for smooth color change
+              }
+            }}>
+              Date and Time (EST): {currentEstDateTime}
+            </Typography>
+          </div>
           {isMobile ? (
             <>
               <IconButton
@@ -151,10 +164,16 @@ const Navbar = () => {
               >
                 <MenuIcon />
               </IconButton>
-              <img src="/AWhite.png" alt="Altera Logo" style={{ marginRight: '10px',width:100 }} />
-              <Typography variant="h4" noWrap component="div" sx={{ flexGrow: 1, textAlign: 'center', color: '' }}>
+              <img src="/AWhite.png" alt="Altera Logo" style={{ marginRight: '10px', width: 100 }} />
+              <Typography variant="h4" noWrap component="div" sx={{
+                flexGrow: 1, textAlign: 'center',
+                '&:hover': {
+                  color: 'pink', // Change color to pink on hover
+                  transition: 'color 0.3s ease', // Adding transition effect for smooth color change
+                }
+              }}>
                 Automated Email Sender </Typography>
-                {isLoggedIn && (
+              {isLoggedIn && (
                 <>
                   <Typography sx={{ color: '#fff', backgroundColor: '#2F2257', padding: '8px', borderRadius: '4px' }}>
                     {firstName}
@@ -165,13 +184,17 @@ const Navbar = () => {
             </>
           ) : (
             <>
-              <div style={{ display: 'flex', flexGrow: 8, justifyContent: 'center', alignItems: 'center' }}>
-              <img src="/AWhite.png" alt="Altera Logo" style={{marginRight: '10px',width:100 }} />
-                <Typography variant="h4" noWrap component="div" sx={{ textAlign: 'center', color: 'white' }}>
+              <div style={{ display: 'flex', flexGrow: 8, justifyContent: 'center', alignItems: 'center', height: '98px', padding: '16px 20px 10px 0px' }}>
+                <img src="/AWhite.png" alt="Altera Logo" style={{ marginRight: '10px', width: 120 }} />
+                <Typography variant="h5" noWrap component="div" sx={{
+                  textAlign: 'center', color: 'white',
+                }}>
                   Automated Email Sender
                 </Typography>
               </div>
-              <div style={{ display: 'flex', flexGrow: 1, justifyContent: 'flex-end', gap: '5px' }}>
+              <div style={{
+                display: 'flex', flexGrow: 1, justifyContent: 'flex-end', gap: '5px',
+              }}>
                 {pages.map((text) => (
                   <Button color="inherit" component={Link} to={`/${text.replace(/\s+/g, '').toLowerCase()}`} key={text}>
                     {text}
@@ -179,15 +202,33 @@ const Navbar = () => {
                 ))}
                 {isLoggedIn ? (
                   <>
-                    <Typography sx={{ color: 'black',fontSize:'20px', backgroundColor: '#fff', padding: '4px',width:'8rem', borderRadius: '4px',textAlign:'center' }}>
+                    <Typography sx={{ color: '#fff', fontSize: '20px', backgroundColor: '#ab4d56', padding: '4px', width: '8rem', borderRadius: '4px', textAlign: 'center' }}>
                       {firstName}
                     </Typography>
                     <Button color="inherit" onClick={handleLogout}>Logout</Button>
                   </>
                 ) : (
                   <>
-                    <Button color="inherit" onClick={handleLoginDialogToggle}>Login</Button>
-                    <Button color="inherit" onClick={handleSignupDialogToggle}>Sign Up</Button>
+                    <Button variant='outlined' onClick={handleSignupDialogToggle} sx={{
+                      color: '#fff', // Change color to pink on hover
+                      //transition: 'color 0.3s ease', // Adding transition effect for smooth color change
+                      bgcolor: '#393393',
+                      borderColor:'#fff',
+                      margin:"0 7px 0 3px ",
+                      '&:hover': {
+                        borderColor: "#f56e7b", 
+                        color:'#f56e7b'
+                      }
+                    }} >Sign Up</Button>
+                    
+                    <Button color="inherit" onClick={handleLoginDialogToggle} sx={{
+                      color: '#fff', // Change color to pink on hover
+                      transition: 'color 0.3s ease', // Adding transition effect for smooth color change
+                      bgcolor: '#f56e7b',
+                      '&:hover': {
+                        backgroundColor: "#ab4d56", 
+                      }
+                    }}>Login</Button>
                   </>
                 )}
               </div>

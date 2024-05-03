@@ -100,7 +100,7 @@ export default function AdminHeader() {
     <div className={classes.root}>
       <AppBar className={classes.appBar}>
         <Toolbar className='my-4 mx-20'>
-          <img src="/AWhite.png" alt="Altera Logo" style={{ marginRight: '15  px', width: 120, }} />
+          <img src="/AWhite.png" alt="Altera Logo" style={{ marginRight: '10px', width: 120, }} />
           <Typography variant="h6" className={classes.title}>
             Admin Dashboard
           </Typography>
@@ -126,10 +126,10 @@ export default function AdminHeader() {
             <IconButton color="inherit" style={{ padding: 0 }}>
               <LanguageIcon />
             </IconButton>
-            <IconButton color="inherit" >
+            <IconButton color="inherit">
               <AccountCircleIcon />
             </IconButton>
-            <IconButton color="inherit" onClick={handleLogout} className = {classes.LogoutButton} >
+            <IconButton color="inherit" onClick={handleLogout} className={classes.LogoutButton} >
               <Typography variant="body1">
                 Logout
               </Typography>

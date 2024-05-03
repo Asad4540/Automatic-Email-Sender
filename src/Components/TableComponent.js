@@ -22,6 +22,7 @@ const useStyles = makeStyles((theme) => ({
     minWidth: 650,
     width: '100%',
     border: '1px solid #ddd',
+    marginTop:"68px"
   },
   headerCell: {
     backgroundColor: theme.palette.primary.main, // existing blue color
@@ -36,11 +37,11 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.common.black,
     fontWeight: 'bold',
     textAlign: 'center',
-    border: '1px solid #ddd',
+    border: '1px solid black',
   },
   cell: {
     textAlign: 'center',
-    border: '1px solid #ddd',
+    border: '1px solid ',
     whiteSpace: 'nowrap',
     overflow: 'hidden',
     textOverflow: 'ellipsis',
@@ -300,7 +301,7 @@ function TableComponent() {
 
   // Function to dynamically apply header cell style based on column name
   const getHeaderCellStyle = (heading) => {
-    switch (heading) {
+    switch (heading) { 
       case 'Monitoring Alerts Validation':
       case 'Monitoring ISS/E-Link Validation':
       case 'Maintenance Mode Disabled':
@@ -310,7 +311,7 @@ function TableComponent() {
       case 'SCM App Validation':
         return { backgroundColor: '#00BBBA', color: '#000000', fontWeight: 'bold', textAlign: 'center', border: '1px solid black',padding:"1px" };
       default:
-        return { backgroundColor: '#393392', color: 'white', fontWeight: 'bold', textAlign: 'center', border: '1px solid black',padding:"1px" }; // Default style for other headers
+        return { backgroundColor: '#151744', color: 'white', fontWeight: 'bold', textAlign: 'center', border: '1px solid black',padding:"1px" }; // Default style for other headers
     }
   };
   const renderDropdownValue = (value) => {
@@ -330,8 +331,8 @@ function TableComponent() {
     <>
       <TableContainer component={Paper}>
         <Table className={classes.table} aria-label="customized table">
-          <TableHead>
-            <TableRow >
+          <TableHead >
+            <TableRow>
               <TableCell className={classes.alphabetHeaderCell}></TableCell>
               {alphabetHeaders.map((letter, index) => (
                 <TableCell key={index} style={getHeaderCellStyle(letter)}>
@@ -362,7 +363,7 @@ function TableComponent() {
                 else if (row.type === 'Read Only') readOnlyCounter = 1;
                 return (
                   <TableRow key={`special-${row.type}-${rowIndex}`} className={classes.specialRow}>
-                    <TableCell colSpan={tableHeadings.length + 1} className={classes.specialRowLabel} style={{backgroundColor: '#707CF1',padding:"0",color:"#ffffff"}}>
+                    <TableCell colSpan={tableHeadings.length + 1} className={classes.specialRowLabel} style={{backgroundColor: '#0076a2',padding:"0",color:"#ffffff"}}>
                       {row.label} 
                     </TableCell>
                   </TableRow>
