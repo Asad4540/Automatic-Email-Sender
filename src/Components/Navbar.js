@@ -142,17 +142,16 @@ const Navbar = () => {
       <AppBar position="fixed" sx={{ bgcolor: '#393392', color: 'white' }}>
         <Toolbar className='my-4 mx-20'>
           <div>
-            <div style={{ display: 'flex', flexGrow: 8, justifyContent: 'center', alignItems: 'center', maxHeight: '98px', padding: '16px 20px 10px 0px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', maxHeight: '98px', padding: '16px 20px 0px 0px' }}>
               <img src="/AWhite.png" alt="Altera Logo" style={{ marginRight: '10px', width: 120 }} />
+              <div>
               <Typography variant="h5" noWrap component="div" sx={{
                 textAlign: 'center', color: 'white',
               }}>
                 Automated Email Sender
               </Typography>
-            </div>
-
-            <Typography sx={{
-               textAlign: 'center', fontSize: '12px',
+        
+            <Typography sx={{textAlign: 'center', fontSize: '12px',
               '&:hover': {
                 color: '#f56e7b', // Change color to pink on hover
                 transition: 'color 0.3s ease', // Adding transition effect for smooth color change
@@ -160,6 +159,8 @@ const Navbar = () => {
             }}>
               Date and Time (EST): {currentEstDateTime}
             </Typography>
+            </div>
+            </div>
           </div>
           <>
             <div style={{
