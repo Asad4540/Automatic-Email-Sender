@@ -3,8 +3,8 @@ import { TextField, Button, makeStyles } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
   formContainer: {
-    marginTop: 40,
-    padding: theme.spacing(2), // Add padding
+    margin: '110px 450px 20px 20px',
+    padding: theme.spacing(3), // Add padding
     boxShadow: '0px 0px 10px 2px rgba(0,0,0,0.1)', // Add shadow
     backgroundColor: '#fff', // Add background color
     borderRadius: 8, // Add border radius for rounded corners
@@ -26,15 +26,15 @@ const AddClient = () => {
         'Data Center': 'Azure',
         'Live/Not Live': 'Live',
         'Time Zone Group': 'West',
-        'Site Name': '',
-        'Code': '',
+        'Site Name': '-',
+        'Code': '-',
         'SQL Configuration': 'AO - 3 Replicas',
-        'Assigned Resource': '',
+        'Assigned Resource': '-',
         'SCM App Group 1 START': 'Pending',
         'SCM App Group 2 - Complete': 'Pending',
-        'SCM App Group 2 - Complete (Enter EST Time in 24h format)':'',
+        'SCM App Group 2 - Complete (Enter EST Time in 24h format)':'-',
     'SUN Component App Group Complete':'Pending',
-    'Patch Reboots Complete (Enter EST Time in 24h format)':'',
+    'Patch Reboots Complete (Enter EST Time in 24h format)':'-',
     'Patch/Reboots Complete':'Pending',
     'C:/drive cleanup (Cleanup on all servers including Gold Images)':'Pending',
     'Citrix Infra Validation':'Pending',

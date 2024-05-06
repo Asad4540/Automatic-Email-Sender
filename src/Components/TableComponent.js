@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
     minWidth: 650,
     width: '100%',
     border: '1px solid #ddd',
-    marginTop:"68px"
+    margin: "99px 0px 20px 0px "
   },
   headerCell: {
     backgroundColor: theme.palette.primary.main, // existing blue color
@@ -297,21 +297,21 @@ function TableComponent() {
     return index >= 7 && index < 21; // Example condition
   };
 
-  const alphabetHeaders = Array.from({ length: tableHeadings.length }, (_, i) => String.fromCharCode(65 + i));
+  //const alphabetHeaders = Array.from({ length: tableHeadings.length }, (_, i) => String.fromCharCode(65 + i));
 
   // Function to dynamically apply header cell style based on column name
   const getHeaderCellStyle = (heading) => {
-    switch (heading) { 
+    switch (heading) {
       case 'Monitoring Alerts Validation':
       case 'Monitoring ISS/E-Link Validation':
       case 'Maintenance Mode Disabled':
-        return { backgroundColor: '#F56E7B', color: '#000000', fontWeight: 'bold', textAlign: 'center', border: '1px solid black',padding:"1px" };
+        return { backgroundColor: '#F56E7B', color: '#000000', fontWeight: 'bold', textAlign: 'center', border: '1px solid black', padding: "1px" };
       case 'DB Validation':
-        return { backgroundColor: '#707CF1', color: '#000000', fontWeight: 'bold', textAlign: 'center', border: '1px solid black',padding:"1px" }; // Check this color, seems like a typo
+        return { backgroundColor: '#707CF1', color: '#000000', fontWeight: 'bold', textAlign: 'center', border: '1px solid black', padding: "1px" }; // Check this color, seems like a typo
       case 'SCM App Validation':
-        return { backgroundColor: '#00BBBA', color: '#000000', fontWeight: 'bold', textAlign: 'center', border: '1px solid black',padding:"1px" };
+        return { backgroundColor: '#00BBBA', color: '#000000', fontWeight: 'bold', textAlign: 'center', border: '1px solid black', padding: "1px" };
       default:
-        return { backgroundColor: '#151744', color: 'white', fontWeight: 'bold', textAlign: 'center', border: '1px solid black',padding:"1px" }; // Default style for other headers
+        return { backgroundColor: '#151744', color: 'white', fontWeight: 'bold', textAlign: 'center', border: '1px solid black', padding: "1px" }; // Default style for other headers
     }
   };
   const renderDropdownValue = (value) => {
@@ -332,14 +332,6 @@ function TableComponent() {
       <TableContainer component={Paper}>
         <Table className={classes.table} aria-label="customized table">
           <TableHead >
-            <TableRow>
-              <TableCell className={classes.alphabetHeaderCell}></TableCell>
-              {alphabetHeaders.map((letter, index) => (
-                <TableCell key={index} style={getHeaderCellStyle(letter)}>
-                  {letter}
-                </TableCell>
-              ))}
-            </TableRow>
             <TableRow >
               <TableCell style={getHeaderCellStyle()}>#</TableCell>
               {tableHeadings.map((heading, index) => (
@@ -363,8 +355,8 @@ function TableComponent() {
                 else if (row.type === 'Read Only') readOnlyCounter = 1;
                 return (
                   <TableRow key={`special-${row.type}-${rowIndex}`} className={classes.specialRow}>
-                    <TableCell colSpan={tableHeadings.length + 1} className={classes.specialRowLabel} style={{backgroundColor: '#0076a2',padding:"0",color:"#ffffff"}}>
-                      {row.label} 
+                    <TableCell colSpan={tableHeadings.length + 1} className={classes.specialRowLabel} style={{ backgroundColor: '#0076a2', padding: "0", color: "#ffffff" }}>
+                      {row.label}
                     </TableCell>
                   </TableRow>
                 );

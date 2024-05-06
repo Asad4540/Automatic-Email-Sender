@@ -1,0 +1,9 @@
+ <Typography sx={{
+              flexGrow: 1, textAlign: 'left', fontSize: '12px',
+              '&:hover': {
+                color: '#f56e7b', // Change color to pink on hover
+                transition: 'color 0.3s ease', // Adding transition effect for smooth color change
+              }
+            }}>
+              Date and Time (EST): {currentEstDateTime}
+            </Typography>
