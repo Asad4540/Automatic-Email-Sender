@@ -145,21 +145,26 @@ const Navbar = () => {
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', maxHeight: '98px', padding: '16px 20px 0px 0px' }}>
               <img src="/AWhite.png" alt="Altera Logo" style={{ marginRight: '10px', width: 120 }} />
               <div>
-              <Typography variant="h5" noWrap component="div" sx={{
-                textAlign: 'center', color: 'white',
-              }}>
-                Automated Email Sender
-              </Typography>
-        
-            <Typography sx={{textAlign: 'center', fontSize: '12px',
-              '&:hover': {
-                color: '#f56e7b', // Change color to pink on hover
-                transition: 'color 0.3s ease', // Adding transition effect for smooth color change
-              }
-            }}>
-              Date and Time (EST): {currentEstDateTime}
-            </Typography>
-            </div>
+                <Typography variant="h5" noWrap component="div" sx={{
+                  textAlign: 'center', color: 'white',
+                  '&:hover': {
+                    color: '#f56e7b', // Change color to pink on hover
+                    transition: 'color 0.3s ease', // Adding transition effect for smooth color change
+                  }
+                }}>
+                  Automated Email Sender
+                </Typography>
+
+                <Typography sx={{
+                  textAlign: 'center', fontSize: '11px',
+                  '&:hover': {
+                    color: '#f56e7b', // Change color to pink on hover
+                    transition: 'color 0.3s ease', // Adding transition effect for smooth color change
+                  }
+                }}>
+                  Date and Time (EST): {currentEstDateTime}
+                </Typography>
+              </div>
             </div>
           </div>
           <>
@@ -167,7 +172,13 @@ const Navbar = () => {
               display: 'flex', flexGrow: 1, justifyContent: 'flex-end', gap: '5px',
             }}>
               {pages.map((text) => (
-                <Button color="inherit" component={Link} to={`/${text.replace(/\s+/g, '').toLowerCase()}`} key={text}>
+                <Button color="inherit" component={Link} to={`/${text.replace(/\s+/g, '').toLowerCase()}`} key={text}
+                sx={{color: '#fff',
+                '&:hover': {
+                  borderColor: "#f56e7b",
+                  color: '#f56e7b'
+                }
+                }}>
                   {text}
                 </Button>
               ))}

@@ -54,7 +54,7 @@ const UpdateResource = () => {
 
   return (
     <>
-      <TableContainer component={Paper} style={{ marginTop: '100px', maxWidth: '650px', marginLeft: '20px', marginRight: 'auto' }}>
+      <TableContainer component={Paper} style={{ marginTop: '100px', maxWidth: '650px', marginLeft: '200px', marginRight: '200px' }}>
         <Table>
           <TableHead>
             <TableRow style={{ backgroundColor: '#151744' }}>

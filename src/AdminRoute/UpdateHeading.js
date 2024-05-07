@@ -33,8 +33,8 @@ const UpdateHeading = () => {
 
   return (
     <div style={{ marginTop: 90, background: '#f9f9f9', boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.1)', padding: '0px 30px 0px 30px ', borderRadius: '5px',
-    marginLeft: '50px', // Shift to left side of the screen
-    marginRight: 'auto', // Shift to left side of the screen
+    marginLeft: '200px', // Shift to left side of the screen
+    marginRight: '200px', // Shift to left side of the screen
     maxWidth: '600px' }}>
     <form style={{ display: 'flex', flexDirection: 'column' }}>
     <TextField

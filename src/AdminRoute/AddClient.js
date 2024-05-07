@@ -3,7 +3,7 @@ import { TextField, Button, makeStyles } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
   formContainer: {
-    margin: '110px 450px 20px 20px',
+    margin: '110px 200px 20px 200px',
     padding: theme.spacing(3), // Add padding
     boxShadow: '0px 0px 10px 2px rgba(0,0,0,0.1)', // Add shadow
     backgroundColor: '#fff', // Add background color
